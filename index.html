@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container
+        {
+            perspective: 2000px;
+            width: 100%;
+            height: 650px;
+            /* background-color: black; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .markaz
+        {
+            /* background-color: white; */
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* animation: animation1   1s  linear; */
+            animation-fill-mode: forwards;
+            transform-style: preserve-3d;
+        }
+        .chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateX(-100px);
+            animation:animation2 2s infinite linear;
+        }
+        .ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateX(100px);
+            animation:animation3 2s infinite linear;
+        }
+        .tepa_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px);
+            animation:animation4 2s infinite linear;
+        }
+        .past_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px);
+            animation:animation5 2s infinite linear;
+        }
+        .oldi_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateZ(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .orqa_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateZ(-100px);
+            animation:animation7 2s infinite linear;
+        }
+        .oldi_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateZ(100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .oldi_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateZ(100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .chap_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateX(-100px) translateZ(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .orqa_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateX(100px) translateZ(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_orqa_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_oldi_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_oldi_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_orqa_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_oldi_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .tepa_oldi_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }.tepa_orqa_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(-100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }.tepa_orqa_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(-100px) translateZ(-100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_oldi_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }
+        .past_oldi_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }.past_orqa_ong_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(-100px) translateX(100px);
+            animation:animation6 2s infinite linear;
+        }.past_orqa_chap_markaz
+        {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;            
+            transform: translateY(100px) translateZ(-100px) translateX(-100px);
+            animation:animation6 2s infinite linear;
+        }
+        
+        .yoq{
+            background-color: black;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .oldi
+        {
+            transform: translateZ(50px);
+        }
+        .orqa
+        {
+            transform: translateZ(-50px);
+        }
+        .tepa
+        {
+            transform:rotateX(90deg) translateZ(50px);
+        }
+        .past
+        {
+            transform:rotateX(-90deg) translateZ(50px);
+        }
+        .chap
+        {
+            transform:rotateY(-90deg) translateZ(50px);
+        }
+        .ong
+        {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .qizil
+        {
+            background-color: #CC0000;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .kok
+        {
+            background-color: #2255DD;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .sabzirang
+        {
+            background-color: #E26100;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .sariq
+        {
+            background-color: #FFCC00;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .oq
+        {
+            background-color: #EEEEEE;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .yashil
+        {
+            background-color: #009822;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        /* @keyframes animation1 
+        {
+            0%{transform: rotate3d(1,1,1,0deg);}
+            100%{transform: rotate3d(1,1,0,90deg);}
+        } */
+        /* @keyframes animation2 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateX(-100px);}
+            100%{transform: rotate3d(1,0,0,-360deg) translateX(-100px);}
+        }
+        @keyframes animation3 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateX(100px);}
+            100%{transform: rotate3d(1,0,0,-360deg) translateX(100px);}
+        }
+        @keyframes animation4 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateY(-100px);}
+            100%{transform: rotate3d(0,1,0,360deg) translateY(-100px);}
+        }
+        @keyframes animation5 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateY(100px);}
+            100%{transform: rotate3d(0,1,0,360deg) translateY(100px);}
+        }
+        @keyframes animation6 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateZ(-100px);}
+            100%{transform: rotate3d(0,0,1,360deg) translateZ(-100px);}
+        }
+        @keyframes animation7 
+        {
+            0%{transform: rotate3d(1,1,1,0deg) translateZ(100px);}
+            100%{transform: rotate3d(0,0,1,360deg) translateZ(100px);}
+        } */
+    </style>
+</head>
+<body>
+    <div class="container"  onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" onmousemove="mouseMove(event)">
+        <!-- Markaziy kub -->
+        <div class="markaz" id="markaziyDiv">
+            <div style=" transform-style: preserve-3d; " id="13">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Chap markaz -->
+            <div class="chap_markaz" id="12" onmousedown="cub_down(12 , event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Ong markaz -->
+            <div class="ong_markaz" id="14" onmousedown="cub_down(14, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- tepa markaz -->
+            <div class="tepa_markaz" id="10" onmousedown="cub_down(10, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- past markaz -->
+            <div class="past_markaz" id="16" onmousedown="cub_down(16, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+             <!-- oldi markaz -->
+             <div class="oldi_markaz" id="4" onmousedown="cub_down(4, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div> 
+            <!-- orqa markaz -->
+            <div class="orqa_markaz" id="22" onmousedown="cub_down(22, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Oldi o'ng markaz -->
+            <div class="oldi_ong_markaz" id="5" onmousedown="cub_down(5, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Oldi chap markaz -->
+            <div class="oldi_chap_markaz" id="3" onmousedown="cub_down(3, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Chap chap markaz-->
+            <div class="chap_chap_markaz" id="21" onmousedown="cub_down(21, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Orqa o'ng markaz -->
+            <div class="orqa_ong_markaz" id="23" onmousedown="cub_down(23, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Tepa o'ng markaz -->
+            <div class="tepa_ong_markaz" id="11" onmousedown="cub_down(11, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Tepa chap markaz -->
+            <div class="tepa_chap_markaz" id="9" onmousedown="cub_down(9, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Tepa oldi markaz -->
+            <div class="tepa_oldi_markaz" id="1" onmousedown="cub_down(1, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Tepa orqa markaz -->
+            <div class="tepa_orqa_markaz" id="19" onmousedown="cub_down(19, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Past o'ng markaz -->
+            <div class="past_ong_markaz" id="17" onmousedown="cub_down(17, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Past chap markaz -->
+            <div class="past_chap_markaz" id="15" onmousedown="cub_down(15, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Past oldi markaz -->
+            <div class="past_oldi_markaz" id="7" onmousedown="cub_down(7, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Past orqa markaz -->
+            <div class="past_orqa_markaz" id="25" onmousedown="cub_down(25, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Tepa oldi o'ng markaz  -->
+            <div class="tepa_oldi_ong_markaz" id="2" onmousedown="cub_down(2, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Tepa oldi chap markaz -->
+            <div class="tepa_oldi_chap_markaz" id="0" onmousedown="cub_down(0, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Tepa orqa ong markaz-->
+            <div class="tepa_orqa_ong_markaz" id="20" onmousedown="cub_down(20, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Tepa orqa chap markaz -->
+            <div class="tepa_orqa_chap_markaz" id="18" onmousedown="cub_down(18, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                    <div class="qizil"></div>
+                </div>
+                <div class="yoq past">
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+            <!-- Past oldi o'ng markaz  -->
+            <div class="past_oldi_ong_markaz" id="8" onmousedown="cub_down(8, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+             <!-- Past oldi chap markaz -->
+             <div class="past_oldi_chap_markaz" id="6" onmousedown="cub_down(6, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                    <div class="oq"></div>
+                </div>
+                <div class="yoq orqa">
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+             <!-- Past orqa ong markaz-->
+             <div class="past_orqa_ong_markaz" id="26" onmousedown="cub_down(26, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                </div>
+                <div class="yoq ong">
+                    <div class="yashil"></div>
+                </div>
+            </div>
+            <!-- Past orqa chap markaz -->
+            <div class="past_orqa_chap_markaz" id="24" onmousedown="cub_down(24, event)" onmouseup="cub_up()" onmousemove="cub_mouseMove(event)">
+                <div class="yoq oldi">
+                </div>
+                <div class="yoq orqa">
+                    <div class="sariq"></div>
+                </div>
+                <div class="yoq tepa">
+                </div>
+                <div class="yoq past">
+                    <div class="sabzirang"></div>
+                </div>
+                <div class="yoq chap">
+                    <div class="kok"></div>
+                </div>
+                <div class="yoq ong">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index2.js">
+    </script>
+</body>
+</html>
